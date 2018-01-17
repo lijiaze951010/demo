@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<script type="text/javascript" src="js/jquery.min.js" ></script>
+		<style>
+			.left1 ul{
+				list-style-type: none;
+				padding: 0;
+                margin: 0;
+			}
+			  .left1 {
+        background: #FAFAFA;
+        padding-right: 0;
+        padding-top: 12px;
+        height: calc(100vh - 58px);
+        overflow:auto;
+    }
+    /*scroll*/
+        .left1::-webkit-scrollbar-track {
+            /*-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);*/
+            background-color: #d2d2d2;
+            border-radius: 10px;
+        }
+
+
+        .left1::-webkit-scrollbar {
+            width: 5px;
+            height: 5px;
+            background-color: #d2d2d2;
+        }
+
+
+        .left1::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            background-color: #a0a0a0;
+        }
+
+        .left1 span {
+            display: block;
+            padding: 1em;
+        }
+
+        .left1 li {
+            padding: 4px 8px;
+        }
+
+        .left1 > ul > li > span {
+            color: #597DC2;
+            font-weight: 900;
+            font-size: 14px;
+            cursor:pointer;
+        }
+
+            .left1 > ul > li > span > i {
+                float: right;
+                line-height: 17px;
+                font-size: 17px;
+            }
+
+        .left1 > ul > li {
+            border-bottom: 1px solid #E7E6E8;
+        }
+
+            .left1 > ul > li > ul > li > span {
+                background-color: #F2F2F2;
+                border-radius: 3px;
+                cursor:pointer;
+            }
+                .left1 > ul > li > ul > li > span:hover {
+                    background-color: #abc0ec;
+                    color:#fff;
+                }
+    .active {
+        color: #fff;
+        background-color: #80A1E6 !important;
+    }
+		</style>
+	</head>
+	<body>
+		<div>
+    <div class="col-md-2 left1" style="">
+        <ul>
+            <li>
+                <span>清单统计分析<i class="fa fa-caret-down" aria-hidden="true"></i></span>
+                <ul>
+                    <li id="Modular123" onclick="menu('Modular123', 'loadModularLeftMenu')"> <span class="active">全国总体的排查结果<br />和分布情况</span></li>
+                    <li id="Modular12" onclick="menu('Modular12', 'loadModularLeftMenu')"> <span>重点城市的排查结果<br />和分布情况</span></li>
+                    <li id="Modular_2" onclick="menu('Modular_2', 'loadModularLeftMenu')"> <span>全国的治理进展情况</span></li>
+                    <li id="Modular_2_2" onclick="menu('Modular_2_2', 'loadModularLeftMenu')"> <span>重点城市的治理进展情况</span></li>
+                    <li id="Modular5" onclick="menu('Modular5', 'loadModularLeftMenu')"> <span>全国总体情况</span></li>
+                    <li id="Modular6" onclick="menu('Modular6', 'loadModularLeftMenu')"> <span>重点城市总体情况</span></li>
+                    <li id="Modular7" onclick="menu('Modular7', 'loadModularLeftMenu')"> <span>全国黑臭水体清单</span></li>
+                    <li id="Modular8" onclick="menu('Modular8', 'loadModularLeftMenu')"> <span>重点城市黑臭水体清单</span></li>
+                    <li id="Modular9" onclick="menu('Modular9', 'loadModularLeftMenu')"> <span>全国黑臭水体统计</span></li>
+                    <li id="Modular10" onclick="menu('Modular10', 'loadModularLeftMenu')"> <span>重点城市黑臭水体统计</span></li>
+                </ul>
+            </li>
+            <li>
+                <span>公众监督统计分析<i class="fa fa-caret-down" aria-hidden="true"></i></span>
+                <ul style="display:none">
+                    <li onclick="menu('Modular-11', 'loadModularLeftMenu')"> <span>不同时间举报信息</span></li>
+                    <li onclick="menu('Modular-12', 'loadModularLeftMenu')"> <span>收到监督举报信息<br />及回复数量</span></li>
+                    <li onclick="menu('Modular-13', 'loadModularLeftMenu')"> <span>对监督举报信息<br />回复不同口径数量</span></li>
+                    <li onclick="menu('Modular-14', 'loadModularLeftMenu')"> <span>收到监督举报信息水体状况分析</span></li>
+                    <li onclick="menu('Modular-15', 'loadModularLeftMenu')"> <span>收到监督举报信息水体状况统计</span></li>
+                    <li onclick="menu('Modular-16', 'loadModularLeftMenu')"> <span>监督举报明细</span></li>
+                </ul>
+            </li>
+           
+        </ul>
+    </div>
+    <div class="col-md-10 right" id="loadModularLeftMenu" style="padding: 20px 30px;">
+    </div>
+</div>
+<script>
+    $("#loadEnvironmentDatabase").load("/html/vectorData.html");
+    $(".left1 > ul > li > ul > li > span").click(function () {
+        var ID = '';
+        $(".left1 > ul > li > ul > li > span").removeClass("active");
+        $(this).addClass("active");
+
+    });
+    $(".left1 > ul > li > span").click(function () {
+       $(".left1 > ul > li > ul").slideUp();
+       $(this).next("ul").slideDown();
+//      $(this).next("ul").slideToggle();
+    });
+</script>
+	</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	<link rel="stylesheet" href="css/font-awesome.min.css" />
+	<script type="text/javascript" src="js/jquery.min.js" ></script>
+		<style>
+			.fa-fw {
+    width: 1.2857142857142858em;
+    text-align: center;
+}
+.fa {
+    display: inline-block;
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+/*在被选中的i标签前面插入一个对号的图标*/
+.checkbox-custom > i.checked:before {
+    content: '\f046';
+}
+
+/*在所有i标签前面插入未选中的空方框*/
+.fa:before {
+    content: "\f096";
+}
+.radio-custom.checked > i:before, .checkbox-custom > i.checked:before {
+    color: #92cf5c;
+}
+.radio-custom > i:before, .checkbox-custom > i:before {
+    font-size: 1.333em;
+    vertical-align: -10%;
+    margin-left: 0;
+    margin-right: 4px;
+    color: #ddd;
+}
+.radio-custom input[type=radio], .checkbox-custom input[type=checkbox] {
+    position: absolute;
+    top:20px;
+}
+.radio input[type="radio"], .radio-inline input[type="radio"], .checkbox input[type="checkbox"], .checkbox-inline input[type="checkbox"] {
+    float: left;
+    margin-left: -20px;
+}
+input[type="radio"], input[type="checkbox"] {
+    margin: 4px 0 0;
+    margin-top: 1px \9;
+    line-height: normal;
+}
+input[type="checkbox"], input[type="radio"] {
+    padding: 0;
+    box-sizing: border-box;
+}
+input, button, select, textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+
+
+.radio-custom.checked > i:before {
+    content: '\f111';
+}
+.radio-custom > i.checked:before, .checkbox-custom > i.checked:before {
+    color: #92cf5c;
+}
+.radio-custom > i:before, .checkbox-custom > i:before {
+    font-size: 1.333em;
+    vertical-align: -10%;
+    margin-left: 0;
+    margin-right: 4px;
+    color: #ddd;
+}
+.fa-circle-o:before {
+    content: "\f10c";
+}
+		</style>
+	</head>
+	<body>
+		<label class='checkbox-custom'>
+                              <input type='checkbox' name='checkboxA' checked='checked'>
+                              <i class='fa fa-fw fa-square-o checked'></i> Item one checked </label>
+                              
+                              
+                              
+                              
+                              
+                              <label class="checkbox-custom">
+                              <input type="checkbox" name="checkboxA" checked="checked">
+                              <i class="fa checked"></i> Item one checked </label>
+                              <label class="checkbox-custom">
+                              <input type="checkbox" name="checkboxA" checked="checked">
+                              <i class="fa fa-fw fa-square-o checked"></i> Item one checked </label>
+                              <label class="checkbox-custom">
+                              <input type="checkbox" name="checkboxA" checked="checked">
+                              <i class="fa fa-fw fa-square-o checked"></i> Item one checked </label>
+                              <label class="checkbox-custom">
+                              <input type="checkbox" name="checkboxA" checked="checked">
+                              <i class="fa fa-fw fa-square-o checked"></i> Item one checked </label>
+                              <label class="radio-custom">
+                              <input type="radio" name="radio">
+                              <i class="fa fa-circle-o"></i> Item two </label>
+                               <label class="radio-custom">
+                              <input type="radio" name="radio">
+                              <i class="fa fa-circle-o"></i> Item two </label>
+                               <label class="radio-custom">
+                              <input type="radio" name="radio">
+                              <i class="fa fa-circle-o"></i> Item two </label>
+                               <label class="radio-custom">
+                              <input type="radio" name="radio">
+                              <i class="fa fa-circle-o"></i> Item two </label>
+	</body>
+	<script>
+		  $(".checkbox-custom input").change(
+        function () {
+            $(this).next().toggleClass("checked");
+        }
+    );
+		$(".radio-custom").click(
+			function(){
+				$(this).addClass("checked").siblings().removeClass("checked");
+			
+				
+			}
+		)
+	</script>
+</html>

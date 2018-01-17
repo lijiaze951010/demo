@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<link rel="stylesheet" href="css/font-awesome.min.css" />
+		<style>
+			body {
+				background-color: #808080;
+			}
+			
+			ul {
+				list-style-type: none;
+				padding: 0;
+				margin: 0;
+			}
+			
+			.left span {
+				display: block;
+				line-height: 1.5;
+				font-size: 13px;
+				font-family: 'Microsoft YaHei';
+				padding-top: 10px;
+				padding-bottom: 10px;
+			}
+			
+			.left>ul>li {
+				background-color: #EDEDED;
+				border-radius: 6px;
+				margin: 4px 0px;
+				line-height: 2.5;
+				padding-left: 18px;
+			}
+			
+			.secondUl>li>span {
+				padding: 9px 16px;
+				display: block;
+				margin-left: -15px;
+				background-color: #EDEDED;
+				border-radius: 6px;
+				color: #000;
+				border: 2px solid #EDEDED;
+				transform: translate(-2px, 0px);
+				box-shadow: 0px 2px 0px rgba(128, 128, 128, 0.25);
+				width: 110%;
+			}
+			
+			.secondUl {
+				position: fixed;
+				width: 186px;
+				top: 89px;
+				left: 30px;
+			}
+			
+			.secondUl>li>ul li {
+				cursor: pointer;
+			}
+			
+			.secondUl>li>.activeSpan {
+				background-color: #80a1e6;
+				border: 2px solid #80a1e6;
+				color: #fff;
+			}
+			
+			.glyphicon-chevron-right {
+				margin-left: -11px;
+				color: transparent ! important;
+			}
+			
+			.A80 {
+				color: #80a1e6 ! important;
+			}
+			
+			.left {
+				padding: 0px 45px;
+				position: relative;
+				z-index: 999;
+			}
+			
+			.left .hov i {
+				color: #71B52C;
+			}
+			
+			.left>ul ul i {
+				font-size: 8px;
+				vertical-align: 1px;
+				color: #D3D2D2;
+			}
+		</style>
+	</head>
+
+	<body>
+		
+					<div class="left">
+						<ul class="secondUl">
+							<li class="secondUl1">
+								<span class="activeSpan">水质指数法</span>
+								<ul>
+									<li>
+										<span><i class="glyphicon glyphicon-chevron-right A80"></i> 1940国控断面</span>
+										<ul>
+											<li class="hov" id="capacityQuery" onclick="menu('capacityQuery', 'loadBearingCapaCityAss')"><span><i class="glyphicon glyphicon-stop"></i> 承载力查询</span></li>
+											<li id="qualityIndex" onclick="menu('qualityIndex', 'loadBearingCapaCityAss')"><span><i class="glyphicon glyphicon-stop"></i>  承载力设置</span></li>
+
+										</ul>
+									</li>
+									<li>
+										<span><i class="glyphicon glyphicon-chevron-right"></i> 长江经济带</span>
+										<ul style="display: none;">
+											<li id="capacityQuery" onclick="menu('capacityQuery', 'loadBearingCapaCityAss')"><span><i class="glyphicon glyphicon-stop"></i> 承载力查询</span></li>
+											<li id="qualityIndex" onclick="menu('qualityIndex', 'loadBearingCapaCityAss')"><span><i class="glyphicon glyphicon-stop"></i>  承载力设置</span></li>
+
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<li class="secondUl2">
+								<span>体系指标法</span>
+								<ul>
+
+									<li onclick="menu('BearingCapacityWaterList', 'loadBearingCapaCityAss')"><span><i class="glyphicon glyphicon-stop"></i>  设置评估模板</span></li>
+									<li onclick="menu('BearingCapacityWaterList2', 'loadBearingCapaCityAss')"><span><i class="glyphicon glyphicon-stop"></i>  设置评估项目</span></li>
+									<li onclick="menu('capacityQuery2', 'loadBearingCapaCityAss')"><span><i class="glyphicon glyphicon-stop"></i> 查询评估结果</span></li>
+
+								</ul>
+							</li>
+						</ul>
+					</div>
+					<div id="loadBearingCapaCityAss">
+
+					</div>
+			
+		<script>
+			$("#loadBearingCapaCityAss").load("/html/capacityQuery.html");
+
+			$(".secondUl1>ul>li>span").click(function() {
+				$(".secondUl>ul>li>span").next().slideUp();
+				$(this).next().slideToggle();
+			})
+			$(".secondUl1>ul>li>ul>li").click(function() {
+
+				$(".secondUl2>ul>li").removeClass("hov");
+				$(".secondUl1>ul>li>ul>li").removeClass("hov");
+				$(this).addClass("hov");
+				$(".secondUl2>span").removeClass("activeSpan");
+				$(".secondUl1>span").addClass("activeSpan");
+				$(".secondUl1>ul>li>ul>li").parent().parent().find(".glyphicon-chevron-right").removeClass("A80");
+				$(this).parent().parent().find(".glyphicon-chevron-right").addClass("A80");
+			})
+			$(".secondUl2>ul>li").click(function() {
+
+				$(".secondUl2>ul>li").removeClass("hov");
+				$(".secondUl1>ul>li>ul>li").removeClass("hov");
+				$(this).addClass("hov");
+				$(".glyphicon-chevron-right").removeClass("A80");
+				$(".secondUl1>span").removeClass("activeSpan");
+				$(".secondUl2>span").addClass("activeSpan");
+
+			})
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<script type="text/javascript" src="js/jquery.min.js" ></script>
+		<style>
+			 .Qright {
+        position: fixed;
+        right: 20px;
+        top: 74px;
+        background-color: #F9FCFE;
+        border-radius: 4px;
+        width: 440px;
+        height: 600px;
+    }
+    #top_div {
+        padding: 10px 25px;
+        padding-right:10px;
+    }
+        #top_div input:first-child {
+            background: #fff;
+            width: 90px;
+            /* height: 30px; */
+            padding: 7px 5px 7px 9px;
+            border-radius: 5px;
+            border: 1px solid #e6e4e4;
+            color: #1087F5;
+        }
+        #top_div button:nth-child(2) {
+            font-size: 12px;
+            padding: 6px 14px;
+            vertical-align: 1px;
+            margin-left: 11px;
+
+        }
+        #top_div button:nth-child(3) {
+            font-size: 12px;
+            padding: 6px 14px;
+            vertical-align: 1px;
+            margin-left: 0px;
+            background: transparent;
+            border: 1px solid #92CF5C;
+            color: #92CF5C;
+            font-weight: 600;
+        }
+       
+        #top_div button:nth-child(4) {
+            font-size: 12px;
+            padding: 6px 14px;
+            vertical-align: 1px;
+            margin-left: 0px;
+            background: transparent;
+            border: 0px solid #92CF5C;
+            color: #92CF5C;
+            font-weight: 600;
+        }
+    .top_div {
+        padding: 10px 25px;
+        padding-right: 10px;
+        box-shadow: 0px 1px 8px rgba(128, 128, 128, 0.5);
+    }
+        .top_div > span {
+            font-size: 16px;
+            margin-left: 10px;
+            font-weight: bold;
+            color: #615f5f;
+        }
+        .top_div input:first-child {
+            background: #fff;
+            width: 210px;
+            /* height: 30px; */
+            padding: 6px 5px 6px 9px;
+            border-radius: 5px;
+            border: 1px solid #e6e4e4;
+            color: #1087F5;
+        }
+
+        .top_div button:nth-child(2) {
+            font-size: 12px;
+            padding: 6px 14px;
+            vertical-align: 1px;
+            margin-left: -10px;
+        }
+
+        .top_div button:nth-child(3) {
+            font-size: 12px;
+            padding: 6px 14px;
+            vertical-align: 1px;
+            margin-left: 0px;
+          
+            border: 1px solid #92CF5C;
+           
+            font-weight: 600;
+        }
+
+        .top_div button:nth-child(4) {
+            font-size: 12px;
+            padding: 6px 14px;
+            vertical-align: 1px;
+            margin-left: 0px;
+            background: #f6f6f6;
+            border: 1px solid rgb(229, 232, 225);
+          color: #5c9c5a;
+            font-weight: 600;
+        }
+         
+/* zy -pub table*/
+.pubTable table:first-child {
+    background: #fff;
+    border-radius: 5px 5px 0px 0px;
+    border-bottom: 2px solid #e3e5f1;
+    box-shadow: 0px 3px 3px rgba(53, 53, 53, 0.08);
+    position: relative;
+    z-index: 1;
+    font-size: 12px;
+    height: 45px;
+    width: 100%;
+}
+
+    .pubTable table:first-child th {
+       
+        padding: 6px 5px 5px 5px;
+        vertical-align: top;
+       
+    }
+
+.pubTable table:nth-child(2) {
+    background: #fff;
+    border-radius: 0px 0px 5px 5px;
+    font-size: 12px;
+}
+
+    .pubTable table:nth-child(2) tr {
+        border-bottom: 1px solid #efefef;
+    }
+
+    .pubTable table:nth-child(2) td {
+        padding: 8px 5px;
+        line-height: 1.5;
+        vertical-align: top;
+    }
+
+    .pubTable table:nth-child(2) tr:hover {
+        background: #cedbf5;
+    }
+		</style>
+	</head>
+	<body>
+		 <div class="Qright">
+        <!-- 加载筛选 -->
+        <div class=" select" style="font-size:12px; margin-bottom:15px;" id="modularl_top_div">
+            <div id="top_div" class="col-md-12">
+                <input type="text" id="test1" placeholder="请选择年份" readonly="readonly">
+                <button id="serch_button" class="btn btn-success" type="button" onclick="publicButtonClick()"><i class="glyphicon glyphicon-search"></i>&nbsp; 查询</button>
+                <button id="serch_button" class="btn btn-success" type="button"><i class="glyphicon glyphicon-refresh"></i>&nbsp; 重新评价</button>
+                <button id="serch_button" class="btn btn-success" type="button"><i class="glyphicon glyphicon-save"></i>&nbsp; 导出</button>
+            </div>
+            <div class="col-md-12 pubTable" style="padding-right: 0px; padding-left: 0; border-top: 1px solid #E9EBF5;">
+                <table id="titie_div_name" class=""><tbody><tr><th>序号</th><th>断面名称</th><th>评估省份</th><th>评估城市</th><th>水质等级</th><th>主要污染指标</th></tr></tbody></table>
+                <table style="width:100%" id="tableID" class="">
+                    <tbody>
+                        <tr> <td>1</td><td>12%</td><td>51%</td><td>82%</td><td>100%</td><td>2014</td></tr>
+                        <tr><td>2</td> <td>0%</td><td>98%</td><td>98%</td><td>98%</td><td>61</td></tr>
+                        <tr><td>3</td> <td>4%</td><td>100%</td><td>98%</td><td>98%</td><td>25</td></tr>
+                        <tr><td>4</td> <td>0%</td><td>100%</td><td>98%</td><td>98%</td><td>41</td></tr>
+                        <tr><td>5</td> <td>25%</td><td>58%</td><td>77%</td><td>98%</td><td>71</td></tr>
+                        <tr><td>6</td> <td>0%</td><td>98%</td><td>98%</td><td>98%</td><td>61</td></tr>
+                        <tr><td>7</td> <td>4%</td><td>100%</td><td>98%</td><td>98%</td><td>25</td></tr>
+                        <tr><td>8</td> <td>0%</td><td>100%</td><td>98%</td><td>98%</td><td>41</td></tr>
+                        <tr><td>9</td> <td>25%</td><td>58%</td><td>77%</td><td>98%</td><td>71</td></tr>
+                        <tr><td>10</td> <td>0%</td><td>98%</td><td>98%</td><td>98%</td><td>61</td></tr>
+                        <tr><td>11</td> <td>4%</td><td>100%</td><td>98%</td><td>98%</td><td>25</td></tr>
+                        <tr><td>12</td> <td>0%</td><td>100%</td><td>98%</td><td>98%</td><td>41</td></tr>
+                        <tr><td>13</td> <td>25%</td><td>58%</td><td>77%</td><td>98%</td><td>71</td></tr>
+                        <tr><td>14</td> <td>0%</td><td>98%</td><td>98%</td><td>98%</td><td>61</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+	</body>
+</html>
