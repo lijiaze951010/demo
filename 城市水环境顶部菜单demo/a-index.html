@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<script type="text/javascript" src="js/jquery.min.js" ></script>
+		<style>
+			
+	   .header .hor-menu ul.nav li a {
+            color: #799EEB;
+        }
+        body {
+            background-color: #f6f6f6 !important;
+            font-family: 'Microsoft YaHei' !important;
+            overflow:hidden ! important;
+        }
+        .header {
+            filter: none !important;
+            background-image: none !important;
+            background-color: #232E44 !important;
+            box-shadow: 0px 0px 18px #1d1313;
+            position: fixed;
+            z-index: 999;
+        }
+        #loadIndex{
+            padding-top: 58px;
+            height:100vh;
+            overflow-x:hidden;
+            overflow-y:auto;
+        }
+            .header .hor-menu ul.nav > li {
+                cursor: pointer;
+            }
+                .header .hor-menu ul.nav > li > a {
+                    font-size: 14px;
+                    padding: 24px 15px 14px 15px;
+                    /*width: 140px;*/
+                }
+
+        .open {
+            color: #ff0000 !important;
+        }
+
+        .line {
+            margin: 0;
+            padding: 0;
+            width: 140px;
+            height: 50px;
+            /*z-index: 3999999;*/
+            display: block;
+            position: absolute;
+            pointer-events: none;
+            left: -41px;
+        }
+
+        .headerCity {
+            position: relative;
+            text-align: center;
+            width: 100vw;
+            position: relative;
+            left: 33%;
+        }
+
+        .menuUl {
+            position: relative;
+            z-index: 2;
+        }
+
+        .header .hor-menu ul.nav li.open > a, .header .hor-menu ul.nav li > a:hover, .header .hor-menu ul.nav li > a:focus {
+            background: transparent;
+        }
+
+        .mark > a {
+            color: white !important;
+        }
+
+        .dropdown-menu > li > a {
+            color: white !important;
+            font-size: 12px !important;
+        }
+
+            .dropdown-menu > li > a:hover {
+                background-color: rgba(100, 146, 237, 0.8) !important;
+            }
+
+        .line > img {
+            position: absolute;
+            width: 21px;
+            left: 57px;
+        }
+
+        .line > div {
+            width: 100%;
+            height: 55px;
+            position: absolute;
+            top: 7px;
+            background-color: rgba(100, 146, 237, 0.8);
+            border-radius: 5px;
+            font-size: 14px;
+            color: #fff;
+            line-height: 55px;
+        }
+		</style>
+	</head>
+	<body>
+		<div class="header">
+        <img style="position: absolute; width: 350px; margin: 10px 20px;" src="images/logo.png" />
+        <img style="position: absolute; margin: 9px 15px; right: 0; width: 46px;" src="images/admin.png" />
+        <div class=" hor-menu headerCity">
+            <div class="line">
+                <img src="images/HC.png" />
+                <div></div>
+            </div>
+           <ul class="nav navbar-nav menuUl">
+                <li id="mainpage" onclick="menu('mainpage', 'loadIndex');" class="mark">
+                    <a> 首页</a>
+                </li>
+                <li id="EnvironmentDatabase" onclick="menu('EnvironmentDatabase', 'loadIndex');">
+                    <a>水环境综合数据库</a>
+                </li>
+                <li id="ModularLeftMenu" onclick="menu('ModularLeftMenu', 'loadIndex');">
+                    <a>黑臭水体综合分析</a>
+                </li>
+                <li id="WaterQuality" onclick="menu('WaterQuality', 'loadIndex');">
+                    <a>水质评估</a>
+                </li>
+                <li id="CustomComputingMap" onclick="menu('CustomComputingMap', 'loadIndex');">
+                    <a>水环境质量排名</a>
+                </li>
+                <li id="BearingCapaCityAss" onclick="menu('BearingCapaCityAss', 'loadIndex');">
+                    <a> 水环境承载力评估 </a>
+                </li>
+                <li id="CityWaterPollutionSources" onclick="menu('CityWaterPollutionSources', 'loadIndex');">
+                    <a> 水环境问题解析</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script>
+    	
+$(document).ready(function () {
+
+    $(".menuUl>li").click(function () {
+        $(".menuUl li").removeClass("mark");
+        $(this).addClass("mark");
+        $(".menuUl li").find("a").css("color", "#799EEB");
+        $(this).find("a").css("color", "white");
+
+
+    });
+    // $(".line").animate({ left: $(".mark").attr("mleft") + 'px' }, 350);
+    $(".menuUl>li").hover(function () {//mouseenter
+        $(".line>div>span").hide();
+        //alert($(this).attr("mleft"));
+
+        $(".line").stop();
+        var leftp = $(this).position().left - ($(".line").width() / 2 - $(this).width() / 2);
+
+        $(".line").animate({ left: leftp + 'px' }, 350);
+        $(this).find("a").css("color", "white");
+
+
+
+
+    }, function () {
+        if ($(".line").is(':hover')) {
+            //没有离开
+        } else {
+            var mle = $(".mark").attr("mleft");
+
+            var leftp = $(".mark").position().left - ($(".line").width() / 2 - $(".mark").width() / 2);
+            //if (mle != undefined) { leftp = leftp + Number(mle); }
+            $(".line").stop();
+            $(".line").animate({ left: leftp + 'px' }, 250);
+            $(this).find("a").css("color", "#799EEB");
+
+        }
+    });
+}
+);
+    </script>
+	</body>
+</html>
