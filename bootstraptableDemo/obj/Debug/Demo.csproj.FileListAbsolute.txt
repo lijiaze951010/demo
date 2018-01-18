@@ -1,0 +1,6 @@
+F:\VSWorkSpace\Demo\Demo\bin\Demo.dll.config
+F:\VSWorkSpace\Demo\Demo\bin\Demo.dll
+F:\VSWorkSpace\Demo\Demo\bin\Demo.pdb
+F:\VSWorkSpace\Demo\Demo\obj\Debug\Demo.csprojResolveAssemblyReference.cache
+F:\VSWorkSpace\Demo\Demo\obj\Debug\Demo.dll
+F:\VSWorkSpace\Demo\Demo\obj\Debug\Demo.pdb

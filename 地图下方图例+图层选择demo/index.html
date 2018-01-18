@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<script type="text/javascript" src="js/jquery.min.js" ></script>
+		<link rel="stylesheet" href="css/font-awesome.min.css" />
+		<style>
+    /*checkbox部分使用的css*/
+    .fa-fw {
+        width: 1.2857142857142858em;
+        text-align: center;
+    }
+
+    .fa {
+        display: inline-block;
+        font-family: FontAwesome;
+        font-style: normal;
+        font-weight: normal;
+        line-height: 1;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    .checkbox-custom > i.checked:before {
+        content: '\f046';
+    }
+
+
+    .fa-square-o:before {
+        content: "\f096";
+    }
+
+    .radio-custom.checked > i:before, .checkbox-custom > i.checked:before {
+        color: #92cf5c;
+    }
+
+    .radio-custom > i:before, .checkbox-custom > i:before {
+        font-size: 1.333em;
+        vertical-align: -10%;
+        margin-left: 0;
+        margin-right: 4px;
+        color: #ddd;
+    }
+
+    .radio-custom input[type=radio], .checkbox-custom input[type=checkbox] {
+        position: absolute;
+        left: -9999em;
+    }
+
+    .radio input[type="radio"], .radio-inline input[type="radio"], .checkbox input[type="checkbox"], .checkbox-inline input[type="checkbox"] {
+        float: left;
+        margin-left: -20px;
+    }
+
+    input[type="radio"], input[type="checkbox"] {
+        margin: 4px 0 0;
+        margin-top: 1px \9;
+        line-height: normal;
+    }
+
+    input[type="checkbox"], input[type="radio"] {
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    input, button, select, textarea {
+        font-family: inherit;
+        font-size: inherit;
+        line-height: inherit;
+    }
+
+
+
+    .radio-custom.checked > i:before {
+        content: '\f111';
+    }
+
+    .radio-custom > i.checked:before, .checkbox-custom > i.checked:before {
+        color: #92cf5c;
+    }
+
+    .radio-custom > i:before, .checkbox-custom > i:before {
+        font-size: 1.333em;
+        vertical-align: -10%;
+        margin-left: 0;
+        margin-right: 4px;
+        color: #ddd;
+    }
+
+    .fa-circle-o:before {
+        content: "\f10c";
+    }
+
+    .assessment span, .assessment select, .assessment label, .assessment div {
+        margin-left: 10px;
+    }
+
+        .assessment span:first-child {
+            margin-left: 0;
+            margin-right: 20px;
+        }
+
+    .btn-default {
+        border: 1px solid #dad6d6;
+        margin-left: 10px;
+    }
+
+    .btn {
+        font-size: 13px;
+    }
+
+    .form-control {
+        height: 26px;
+    }
+    /*checkbox部分使用的css*/
+    .vectorMap {
+        background-image: url(../images/52.png);
+        height: calc(100vh - 58px);
+        background-size: cover;
+    }
+    .mapToolbar {
+        position: fixed;
+        bottom: 0;
+        position: absolute;
+        bottom: 0px;
+        padding: 0 35px;
+        width: 100%;
+      
+        background-color: rgba(255, 255, 255, 0.71);
+    }
+        .mapToolbar > ul > li {
+            float: left;
+            line-height: 60px;
+            padding-top: 5px;
+            margin: 0px 13px;
+            cursor:pointer;
+        }
+            .mapToolbar > ul > li > label {
+                font-weight: 300;
+                font-size: 13px;
+            }
+               
+</style>
+	</head>
+	<body>
+		<div class="mapToolbar">
+    <ul>
+        <li>
+            <label class="radio-custom checked">
+                <input type="radio" name="radio">
+                <i class="fa fa-circle-o"></i>&nbsp;&nbsp;  植被类型空间分布
+            </label>
+        </li>
+        <li>
+            <label class="radio-custom">
+                <input type="radio" name="radio">
+                <i class="fa fa-circle-o"></i>&nbsp;&nbsp;  DEM空间分布
+            </label>
+        </li>
+        <li>
+            <label class="radio-custom">
+                <input type="radio" name="radio">
+                <i class="fa fa-circle-o"></i>&nbsp;&nbsp;  地貌类型空间分布
+            </label>
+        </li>
+        <li>
+            <label class="radio-custom">
+                <input type="radio" name="radio">
+                <i class="fa fa-circle-o"></i>&nbsp;&nbsp;  遥感影像数据
+            </label>
+        </li>
+        <li>
+            <label class="radio-custom">
+                <input type="radio" name="radio">
+                <i class="fa fa-circle-o"></i>&nbsp;&nbsp;  土壤空间分布
+            </label>
+        </li>
+        <li>
+            <label class="radio-custom">
+                <input type="radio" name="radio">
+                <i class="fa fa-circle-o"></i>&nbsp;&nbsp;  土壤质地空间分布
+            </label>
+        </li>
+        <li>
+            <label class="radio-custom">
+                <input type="radio" name="radio">
+                <i class="fa fa-circle-o"></i>&nbsp;&nbsp;  土壤类型空间分布
+            </label>
+        </li>
+        <li>
+            <label class="radio-custom">
+                <input type="radio" name="radio">
+                <i class="fa fa-circle-o"></i>&nbsp;&nbsp;  土壤利用空间分布
+            </label>
+        </li>
+    </ul>
+</div>
+  <script>
+        $(".radio-custom").click(
+             function () {
+                 $(".radio-custom").removeClass("checked");
+                 $(this).addClass("checked");
+
+
+             }
+         )
+    </script>
+
+	</body>
+</html>
