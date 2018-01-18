@@ -1,0 +1,157 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+
+    <script src="jsorcss/jquery.min.js"></script>
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="jsorcss/bootstrap-table.js"></script>
+    <script src="jsorcss/bootstrap-table-zh-CN.js"></script>
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="jsorcss/bootstrap-table.css" rel="stylesheet" />
+<style>
+	  .cityTable .fixed-table-header >table{
+        background: #fff;
+        border-radius: 5px 5px 0px 0px;
+        border-bottom: 2px solid #e3e5f1;
+        box-shadow: 0px 3px 3px rgba(53, 53, 53, 0.08);
+        position: relative;
+        z-index: 1;
+        font-size: 12px;
+        height: 45px;
+        width: 100%;
+    }
+   
+    .cityTable .fixed-table-container thead th {
+      border:none;
+    }
+    .cityTable .fixed-table-container tbody td {
+        border-left: 0px solid #dddddd;
+    }
+    .cityTable .fixed-table-container {
+     
+        border: 0px solid #dddddd;
+        border-radius: 0px;
+     
+    }
+    .cityTable .table{
+        background-color: #fff !important;
+    }
+        .cityTable .table thead tr th {
+            font-size: 13px;
+            font-weight: 600;
+            text-align: center;
+        }
+        .cityTable .table > tbody > tr > td {
+            border-top: 1px solid #efefef;
+            padding: 10px ! important;
+            text-align:center;
+        }
+
+    .cityTable .fixed-table-header {
+        margin-right: 0 !important;
+        box-shadow: 0px 3px 3px rgba(53, 53, 53, 0.08);
+        position: relative;
+        z-index: 11;
+    }
+    .cityTable .fixed-table-body {
+       
+        position: relative;
+        z-index: 10;
+    }
+    .cityTable .bootstrap-table .table > thead > tr > th {
+        vertical-align: bottom;
+        border-bottom: 0px solid #ddd; 
+    }
+     /*scroll*/
+    #tableCage::-webkit-scrollbar-track {
+        /*-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);*/
+        background-color: #d2d2d2;
+        border-radius: 10px;
+    }
+
+
+    #tableCage::-webkit-scrollbar {
+        width: 5px;
+        height: 8px;
+        background-color: #d2d2d2;
+    }
+
+
+    #tableCage::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background-color: #a0a0a0;
+    }
+</style>
+</head>
+<body>
+	<div class="cityTable"> <table id="tb_departments"></table>
+
+		
+	</div>
+   
+
+
+    <script type="text/javascript">
+        $(function () {
+            //1.初始化Table
+            var oTable = new TableInit();
+            oTable.Init();
+        });
+
+        var TableInit = function () {
+            var oTableInit = new Object();
+            //初始化Table
+            oTableInit.Init = function () {
+                $('#tb_departments').bootstrapTable({
+                    url: 'jsorcss/data6.json',         //请求后台的URL（*）
+                    method: 'get',                      //请求方式（*）
+                    striped: true,                      //是否显示行间隔色
+                    sortable: false,                     //是否启用排序
+                    sortOrder: "asc",                   //排序方式
+                    pagination: false,//是否显示分页（*）  
+                    queryParams: oTableInit.queryParams,//传递参数（*）
+                    pageNumber: 1,                       //初始化加载第一页，默认第一页
+                    pageSize: 10,                       //每页的记录行数（*）
+                    pageList: [10, 25, 50, 100],        //可供选择的每页的行数（*）
+                    minimumCountColumns: 2,             //最少允许的列数
+                    clickToSelect: true,                //是否启用点击选中行
+                    height: 500,                        //行高，如果没有设置height属性，表格自动根据记录条数觉得表格高度
+                    columns: [{
+                        checkbox: true
+                    }, {
+                        field: 'shape',
+                        title: 'column_1'
+                    }, {
+                        field: 'color',
+                        title: 'column_2'
+                    }, {
+                        field: 'area',
+                        title: 'column_3'
+                    }, {
+                        field: 'label',
+                        title: 'column_4'
+                    }, ]
+                });
+            };
+
+
+            //得到查询的参数
+            oTableInit.queryParams = function (params) {
+                var temp = {   //这里的键的名字和控制器的变量名必须一直，这边改动，控制器也需要改成一样的
+                    limit: params.limit,   //页面大小
+                    offset: params.offset,  //页码
+                    departmentname: $("#txt_search_departmentname").val(),
+                    statu: $("#txt_search_statu").val()
+                };
+                return temp;
+            };
+            return oTableInit;
+        };
+
+    </script>
+</body>
+</html>
