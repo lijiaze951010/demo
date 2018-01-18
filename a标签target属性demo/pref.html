@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+	</head>
+	<body>
+		<div>
+			<div>
+				<a data-toggle="modal"  data-target="#myModal">Click me</a>   </div>
+			
+			<!-- Modal -->
+			
+		</div>
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+							<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+							<h4 class="modal-title" id="myModalLabel">Modal title</h4>
+						</div>
+						<div class="modal-body">
+							<img src="img/01.jpg"> 
+	<p>sfaddddddddddddddddd</p>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+							<button type="button" class="btn btn-primary">Save changes</button>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+	</body>
+<script>
+	$('#myModal').modal({
+  keyboard: false,
+  backdrop:true,
+  show:false,
+ 
+})
+</script>
+    <script type="text/javascript">
+            $(document).ready(function() {
+                openModal();
+                closeModal();
+            });
+            
+            //打开模态框
+            function openModal(){
+                var fatherBody = $(window.top.document.body);
+                var id = 'pages';
+                var dialog = $('#' + id);
+                if (dialog.length == 0) {
+                    dialog = $('<div class="modal fade" role="dialog" id="' + id + '"/>');
+                    dialog.appendTo(fatherBody);
+                }
+                dialog.load("model.html", function() {
+                    dialog.modal({
+                      backdrop: false
+                    });
+                });
+                fatherBody.append("<div id='backdropId' class='modal-backdrop fade in'></div>");
+            }
+            
+            //关闭模态框
+            function closeModal(){
+                var fatherBody = $(window.top.document.body);
+                fatherBody.find("#pages").on('hidden.bs.modal', function (e) {
+                    fatherBody.find("#backdropId").remove();
+                });
+            }
+        </script>
+</html>
