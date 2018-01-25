@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<script type="text/javascript" src="js/jquery.min.js" ></script>
+		<script src="https://cdn.bootcss.com/react/15.4.2/react.min.js"></script>
+<script src="https://cdn.bootcss.com/react/15.4.2/react-dom.min.js"></script>
+<script src="https://cdn.bootcss.com/babel-standalone/6.22.1/babel.min.js"></script>
+
+	</head>
+	 <body>
+    <!--React渲染的模板内容会插入到这个DOM节点中，也可以理解为一个容器-->
+    <div id="container">
+
+    </div>
+  </body>
+  <!--在React开发中，使用JSX,跟JavaScript不兼容，所以在使用JSX的地方需要设置type="text/babel"-->
+  <!--babel是一个转换编译器，可以将ES6转成可以在浏览器中运行的代码-->
+  <script type="text/babel">
+
+  //在此处编写React代码
+      /**
+      设置组件的样式 三种：
+      1、内联样式
+      2、对象样式
+      3、选择器样式
+
+      注意：在React和HTML5中我们设置样式时的书写格式是有区别的
+        a、HTML5以;结尾
+           React以,结尾
+        b、HTML5中key,value都不加引号
+           React中属于JavaScript对象，key的名字不能出现"-",需要使用驼峰命名法。如果value为
+           字符串，需要加引号
+        c、HTML5中，value如果是数字，需要带单位
+           React中不需要带单位
+
+
+      我们定义一个组件类，同时使用三种设置组件样式的方法
+      需求：定义一个组件，分为上下两行显示内容
+      <div> 内联样式：设置背景颜色，边框大小，边框颜色
+      <h1></h1> 对象样式：设置背景颜色，字体颜色
+      <p></p>   选择器样式：设置字体大小
+      </div>
+
+      注意：在React中如果使用选择器样式设置组件样式时，属性名不能使用class，需要使用className替换
+      类似的：使用htmlFor替换for
+    **/
+
+    //定义组件之前创建设置h1样式对象
+    var hStyle={
+      backgroundColor:"green",
+      color:"red"
+    }
+ var pStyle={
+      backgroundColor:"green",
+      color:"red"
+    }
+    var ShowMessage =React.createClass({
+      render:function(){
+        return (
+          <div style={{backgroundColor:"yellow",borderWidth:5,borderColor:"black",borderStyle:"solid"}}>
+            <h1 style={hStyle}>{this.props.firstRow}</h1>
+            <p className="pStyle">{this.props.secondRow}</p>
+          </div>
+        );
+      }
+    });
+
+    ReactDOM.render(
+      <ShowMessage firstRow="你好" secondRow="蓝鸥"/>,
+      document.getElementById("container")
+    );
+  </script>
+</html>
