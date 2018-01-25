@@ -8,14 +8,14 @@
 		<style>
 			.dad{
 				background: #39B3D7;
-				width:500px;height:300px;
+				width:100vw;height:300px;
 				margin-top:10px;
 
 			}
 			.son{
 				background: #285E8E;
-				width: 100px;padding:20px;color:#fff;font-size: 30px;margin:10px;
-				
+				padding:20px;color:#fff;font-size: 30px;margin:10px;
+				flex-basis:auto;
 			}
 			.son1{
 				background: #285E8E;
@@ -26,15 +26,17 @@
 		</style>
 	</head>
 	<body>
-		<div class="container dad"style="display:flex;justify-content:space-around;align-items: flex-start;">
-			<div class="son">aa</div>
-			<div class="son">bb</div>
-			<div class="son">cc</div>
+		<div class="container dad"style="display:flex;justify-content:space-around;align-items: flex-start;flex-wrap: wrap;padding-left:50px;">
+			<div style="order:1;flex-grow: 3;" class="son">aa</div>
+			<div style="order:2;flex-grow: 2;" class="son">bb</div>
+			<div style="order:0;flex-grow: 1;" class="son">cc</div>
+			
 		</div>
 		<div class="container dad"style="display:flex;justify-content:space-between;align-items: center;">
 			<div class="son1" >aa</div>
 			<div class="son1">bb</div>
 		<div class="son1">bb</div>
 		</div>
+			<iframe height='268' scrolling='no' src='//codepen.io/HugoGiraudel/embed/pkwqH/?height=268&theme-id=0' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>
 	</body>
 </html>

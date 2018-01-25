@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<script type="text/javascript" src="js/jquery.min.js" ></script>
+		<script type="text/javascript" src="js/unslider.min.js" ></script>
+	</head>
+	<body>
+		<style>
+    body {
+        overflow-y: hidden;
+    }
+
+
+
+    .banner {
+        position: relative;
+        overflow: auto;
+        text-align: center;
+    }
+
+        .banner li {
+            list-style: none;
+        }
+
+        .banner ul li {
+            float: left;
+        }
+
+
+
+
+
+
+        #b04 {
+            width: 100vw;
+        }
+
+            #b04 .dots {
+                position: fixed;
+                left: 0;
+                right: 0;
+                bottom: 20px;
+            }
+
+                #b04 .dots li {
+                    display: inline-block;
+                    width: 10px;
+                    height: 10px;
+                    margin: 0 4px;
+                    text-indent: -999em;
+                    border: 2px solid #bbbbbb;
+                    border-radius: 6px;
+                    cursor: pointer;
+                    opacity: .4;
+                    -webkit-transition: background .5s, opacity .5s;
+                    -moz-transition: background .5s, opacity .5s;
+                    transition: background .5s, opacity .5s;
+                }
+
+                    #b04 .dots li.active {
+                        background: #cccccc;
+                        opacity: 1;
+                    }
+
+            #b04 .arrow {
+                position: fixed;
+                top: 45vh;
+            }
+
+            #b04 #al {
+                left: 15px;
+            }
+
+            #b04 #ar {
+                right: 15px;
+            }
+    </style>
+
+
+    <div class="banner" id="b04">
+
+        <ul>
+
+            <li>
+                <div style="background: #F6F6F6; height: 95vh; width: 100vw">
+                    <img src="img/p1.png" />
+                </div>
+            </li>
+
+            <li>
+            <div style="background: #F6F6F6; height: 95vh; width: 100vw">
+                <img src="img/p2.png" />
+                </div>
+            </li>
+            <li>
+            <div style="background: #F6F6F6; height: 95vh; width: 100vw">
+                <img src="img/p2.png" />
+                </div>
+            </li>
+        </ul>
+
+        <a href="javascript:void(0);" class="unslider-arrow04 prev"><img class="arrow" id="al" src="../images/left.png" alt="prev" width="20" height="35"></a>
+
+        <a href="javascript:void(0);" class="unslider-arrow04 next"><img class="arrow" id="ar" src="../images/right.png" alt="next" width="20" height="37"></a>
+        <div style="background: #A2CFF9;height:8px;width:100vw;position:fixed;bottom:0"></div>
+
+    </div>
+
+
+    <script>
+
+        $(document).ready(function (e) {
+
+            var unslider04 = $('#b04').unslider({
+
+                dots: true
+
+            }),
+
+            data04 = unslider04.data('unslider');
+
+
+
+            $('.unslider-arrow04').click(function () {
+
+                var fn = this.className.split(' ')[1];
+
+                data04[fn]();
+
+            });
+
+        });
+
+    </script>
+
+    <!-- example_04 end -->
+    <!-- example_05 begin -->
+    <!-- example_04 end -->
+
+</body>
+
+</html>
