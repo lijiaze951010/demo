@@ -8,7 +8,11 @@
 		<script src="https://cdn.bootcss.com/react/15.4.2/react.min.js"></script>
 <script src="https://cdn.bootcss.com/react/15.4.2/react-dom.min.js"></script>
 <script src="https://cdn.bootcss.com/babel-standalone/6.22.1/babel.min.js"></script>
-
+<style>
+	.pStyle{
+		color:#269ABC;
+	}
+</style>
 	</head>
 	 <body>
     <!--React渲染的模板内容会插入到这个DOM节点中，也可以理解为一个容器-->
@@ -53,10 +57,7 @@
       backgroundColor:"green",
       color:"red"
     }
- var pStyle={
-      backgroundColor:"green",
-      color:"red"
-    }
+ 
     var ShowMessage =React.createClass({
       render:function(){
         return (

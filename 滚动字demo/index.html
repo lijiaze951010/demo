@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<script type="text/javascript" src="js/jquery.min.js" ></script>
+		<style>
+			.gundongzi{
+				width:100px;
+				height:50px;
+				border:2px solid #808080;
+				position: relative;
+				overflow: hidden;
+			}
+			.gundong{
+				position:absolute;top:0px;
+					animation: myfirst5 30s infinite;
+-moz-animation: myfirst5 30s infinite;	/* Firefox */
+-webkit-animation: myfirst5 30s infinite;	/* Safari 和 Chrome */
+-o-animation: myfirst5 30s infinite;	
+			}
+		</style>
+			<style>
+		
+			
+			@keyframes myfirst5
+{
+from {top: 0px;}
+to {top: -500px;}
+}
+
+@-moz-keyframes myfirst5 /* Firefox */
+{
+from {top: 0px;}
+to {top: -500px;}
+}
+
+@-webkit-keyframes myfirst5 /* Safari 和 Chrome */
+{
+from {top: 0px;}
+to {top: -500px;}
+}
+
+@-o-keyframes myfirst5 /* Opera */
+{
+from {top: 0px;}
+to {top: -500px;}
+}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="gundongzi">
+				<p class="gundong">aaa<br/>aaa<br/>aaa<br/>aaa<br/>aaa<br/>aaa<br/>aaa<br/>aaa<br/>aaa<br/>aaa<br/>aaa<br/>aaa<br/>aaa<br/></p>
+			</div>
+		</div>
+	</body>
+</html>

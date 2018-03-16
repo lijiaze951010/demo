@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    	<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<script type="text/javascript" src="js/jquery.min.js" ></script>
+    <link href="css/esri.css" rel="stylesheet" />
+
+    <script src="js/init.js"></script>
+    <script src="js/map.js"></script>
+     <style>
+    .esriSimpleSliderTL {
+        top: 112px;
+        left: 20px;
+        width: 33px;
+        position: fixed;
+        border:none;
+    }
+    .esriSimpleSliderVertical .esriSimpleSliderIncrementButton {
+        width: 33px;
+    }
+    .esriSimpleSliderVertical .esriSimpleSliderDecrementButton {
+        width: 33px;
+    }
+    /*arcgis中的class，container和bootstrap中的container宽度冲突*/
+    #map #map_root, #map #map_container {
+        max-width: 100vw ! important;
+    }
+    /*arcgis中的class，container和bootstrap中的container宽度冲突*/
+   .float{
+   	position:fixed;
+   	top:10px;
+   	left: 20px;
+   	z-index: 999;;
+   }
+</style>
+</head>
+<body>
+	<div class="float"> <input type="checkbox" id="checkbox1" onclick="checkLayer()" />
+    <input type="checkbox" id="checkbox2" onclick="checkLayer()" />
+    <input type="checkbox" id="checkbox3" onclick="checkLayer()" />
+    <input type="checkbox" id="checkbox4" onclick="checkLayer()" />
+    <input type="checkbox" id="checkbox5" onclick="checkLayer()" />
+    <input type="checkbox" id="checkbox6" onclick="checkLayer()" />
+    <input type="checkbox" id="checkbox7" onclick="checkLayer()" />
+   </div>
+   
+<div id="map" style="height:100vh;width:100vw"><div id="scalebar"></div></div>
+</body>
+</html>

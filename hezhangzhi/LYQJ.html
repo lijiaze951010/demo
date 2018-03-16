@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>@ViewBag.Title - 我的 ASP.NET 应用程序</title>
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" href="css/left.css" />
+		<link rel="stylesheet" href="css/right.css" />
+		<link rel="stylesheet" href="css/top.css" />
+		<link rel="stylesheet" href="css/mapTab.css" />
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/mapTab.js"></script>
+		<style>
+			/*暂时的背景图片样式随后可删除*/
+			
+			body {
+				background-image: url(img/background.png);
+				background-size: cover;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="header">
+			<img class="logo" src="img/HC.png" />
+			<span class="logotitle">承德市河长制智慧一体化管理平台</span>
+			<img style="position: absolute; margin: 9px 15px; right: 0; width: 46px;" src="img/admin.png" />
+			<div class=" hor-menu headerCity">
+				<div class="move">
+
+					<div></div>
+				</div>
+				<ul class="nav navbar-nav">
+					<li id="lyqj" onclick="window.open('LYQJ.html', '_self')" class="mark">
+						流域全景
+					</li>
+					<li id="sxsfx" onclick="window.open('SXSFX.html', '_self')">
+						水形式分析
+					</li>
+					<li id="hzxd" onclick="window.open('HZXD.html', '_self')">
+						河长行动
+					</li>
+					<li id="jxkh" onclick="window.open('JXKH.html', '_self')">
+						绩效考核
+					</li>
+					<li id="yqfx" onclick="window.open('YQFX.html', '_self')">
+						舆情分析
+					</li>
+					<li id="zhjc" onclick="window.open('ZHJC.html', '_self')">
+						综合决策
+					</li>
+				</ul>
+			</div>
+		</div>
+		<script type="text/javascript" src="js/top.js"></script>
+
+		<div id="content" style="padding-top: 58px;">
+			<link rel="stylesheet" href="css/FloatTab.css" />
+			<link rel="stylesheet" href="css/FloatTab-bottom.css" />
+			<div class="FloatTab FloatTab-left">
+				<div class="FloatTabSearch">
+					<div class="input-group">
+						<input type="text" class="form-control" placeholder="Search for...">
+						<span class="input-group-btn">
+                <button class="btn btn-default" type="button">搜 索</button>
+            </span>
+					</div>
+					<!-- /input-group -->
+				</div>
+				<div class="FloatTabPage">
+					<span class="title">流域概况</span><br />
+					<span class="line"></span>
+					<span class="titleSecond">流域总面积</span><br />
+					<span class="titleThird">&nbsp;&nbsp;&nbsp; 滦河:</span><span class="number1">33.8km</span><span class="titleThird">武烈河:</span><span class="number1">33.8km</span>
+					<span class="titleSecond">主河道总长</span><br />
+					<span class="titleThird">&nbsp;&nbsp;&nbsp; 滦河:</span><span class="number1">33.8km</span><span class="titleThird">武烈河:</span><span class="number1">33.8km</span>
+					<span class="titleSecond">湖泊总面积:</span><span class="number1">33.8km</span><br />
+					<span class="titleSecond">水库总面积:</span><span class="number1">33.8km</span><br />
+					<span class="titleSecond">水渠总长度:</span><span class="number1">33.8km</span>
+				</div>
+				<div class="FloatTabPage">
+					<span class="title">河长行动</span>
+					<span class="line"></span>
+				</div>
+				<div class="FloatTabPage">
+						<span class="title">重点工作</span>
+						<span class="line"></span>
+					</div>
+				<div class="FloatTabPage">
+					<span class="title">水资源概况</span>
+					<span class="line"></span>
+				</div>
+			</div>
+			<div class="FloatTab FloatTab-right">
+				<div class="FloatTabPage">
+					<span class="title">绩效考核</span>
+					<span class="line"></span>
+				</div>
+				<div class="FloatTabPage">
+					<span class="title">水环境概览</span>
+					<span class="line"></span>
+					<span class="titleSecond">地表水</span><br />
+					<span class="titleThird">&nbsp;&nbsp;&nbsp; 国控断面（12）</span><span class="titleThird">上年达标率:</span><span class="number1">45%</span><br/>
+					<span class="titleThird">&nbsp;&nbsp;&nbsp; 省控断面（12）</span><span class="titleThird">上年达标率:</span><span class="number1">45%</span><br />
+					<span class="titleThird">&nbsp;&nbsp;&nbsp; 市控断面（12）</span><span class="titleThird">上年达标率:</span><span class="number1">45%</span><br />
+					<span class="titleSecond">饮用水源地</span><br />
+					<span class="titleThird">&nbsp;&nbsp;&nbsp; 国控断面（12）</span><span class="titleThird">上年达标率:</span><span class="number1">45%</span><br />
+					<span class="titleThird">&nbsp;&nbsp;&nbsp; 省控断面（12）</span><span class="titleThird">上年达标率:</span><span class="number1">45%</span><br />
+					<span class="titleThird">&nbsp;&nbsp;&nbsp; 市控断面（12）</span><span class="titleThird">上年达标率:</span><span class="number1">45%</span>
+					<span class="titleSecond">黑臭水体:</span><span class="number2">总计13条</span><span class="titleThird">上年达标率:</span><span class="number1">45%</span><br />
+					<span class="titleSecond">地下水:</span><span class="number2">水质保持稳定</span><span class="titleThird">上年达标率:</span><span class="number1">45%</span><br />
+				
+				</div>
+				<div class="FloatTabPage">
+					<span class="title">舆情</span>
+					<span class="line"></span>
+				</div>
+				<div class="FloatTabPage">
+					<span class="title">工程</span>
+					<span class="line"></span>
+				</div>
+			</div>
+			<div class="FloatTab-bottom">
+
+				<div class="bottomPage">
+					<ul class="bottomTab">
+						<li><span id="fq">分区</span>
+							<ul class="bottomTabUp">
+								<li><input type="checkbox" /><span>水资源分区</span></li>
+								<li><input type="checkbox" /><span>水功能分区</span></li>
+								<li><input type="checkbox" /><span>水生态环境功能分区</span></li>
+								<li><input type="checkbox" /><span>生态红线</span></li>
+								<li><input type="checkbox" /><span>环境质量底线</span></li>
+								<li><input type="checkbox" /><span>资源利用上线</span></li>
+								<li><input type="checkbox" /><span>管理网格</span></li>
+							</ul>
+						</li>
+						<li><span>基础</span>
+							<ul class="bottomTabUp">
+								<li><input type="checkbox" /><span>行政区划</span></li>
+								<li><input type="checkbox" /><span>河湖</span></li>
+								<li><input type="checkbox" /><span>水库</span></li>
+								<li><input type="checkbox" /><span>水源地</span></li>
+								<li><input type="checkbox" /><span>保护区</span></li>
+								<li><input type="checkbox" /><span>风景区</span></li>
+								<li><input type="checkbox" /><span>地下水</span></li>
+								<li><input type="checkbox" /><span>土地利用</span></li>
+							</ul>
+						</li>
+						<li><span>水资源</span>
+							<ul class="bottomTabUp">
+								<li><input type="checkbox" /><span>水资源分区</span></li>
+								<li><input type="checkbox" /><span>水文</span></li>
+								<li><input type="checkbox" /><span>雨量</span></li>
+								<li><input type="checkbox" /><span>闸坝</span></li>
+								<li><input type="checkbox" /><span>水库</span></li>
+								<li><input type="checkbox" /><span>泵站</span></li>
+								<li><input type="checkbox" /><span>水分区</span></li>
+								<li><input type="checkbox" /><span>引调水</span></li>
+								<li><input type="checkbox" /><span>取用水</span></li>
+							</ul>
+						</li>
+						<li><span>执法</span>
+							<ul class="bottomTabUp">
+								<li><input type="checkbox" /><span>执法网格</span></li>
+
+							</ul>
+						</li>
+						<li><span>水污染</span>
+							<ul class="bottomTabUp">
+								<li><input type="checkbox" /><span>污染源</span></li>
+								<li><input type="checkbox" /><span>河道排口</span></li>
+
+							</ul>
+						</li>
+						<li><span>水生态</span>
+							<ul class="bottomTabUp">
+								<li><input type="checkbox" /><span>控制单元</span></li>
+								<li><input type="checkbox" /><span>生态红线</span></li>
+
+							</ul>
+						</li>
+						<li><span>水环境</span>
+							<ul class="bottomTabUp">
+								<li><input type="checkbox" /><span>断面</span></li>
+								<li><input type="checkbox" /><span>控制单元</span></li>
+
+							</ul>
+						</li>
+						<li><span>治理</span>
+							<ul class="bottomTabUp">
+								<li><input type="checkbox" /><span>工程信息</span></li>
+								<li><input type="checkbox" /><span>河长牌</span></li>
+
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="image_stack">
+				<img id="photo1" class="stackphotos" src="img/421.png">
+				<img id="photo2" class="stackphotos" src="img/422.png">
+				<img id="photo3" class="stackphotos" src="img/423.png">
+			</div>
+			<img style="position: fixed;top: 70px;left: 290px;box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);" src="img/05.png" />
+			<script type="text/javascript" src="js/FloatTab-bottom.js"></script>
+		</div>
+
+	</body>
+
+</html>

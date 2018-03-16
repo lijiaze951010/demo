@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+	</head>
+<style>
+	#mapType-wrapper {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+#mapType {
+    height: 80px;
+    cursor: pointer;
+    -webkit-transition-property: width,background-color;
+    transition-property: width,background-color;
+    -webkit-transition-duration: .4s;
+    transition-duration: .4s;
+    width: 110px;
+    background-color: rgba(255,255,255,0);
+}
+#renderModeSwitch {
+    position: absolute;
+    bottom: 10px;
+    left: -29px;
+    height: 24px;
+    width: 24px;
+    -webkit-transition-property: width,background-color;
+    transition-property: width,background-color;
+    -webkit-transition-duration: .4s;
+    transition-duration: .4s;
+}
+#mapType .normal {
+    z-index: 1;
+    background-position: 0 0;
+    right: 20px;
+}
+#mapType .mapTypeCard {
+    height: 60px;
+    width: 86px;
+    position: absolute;
+    border-radius: 2px;
+    top: 10px;
+    box-sizing: border-box;
+    border: 1px solid transparent;
+    border: 1px solid rgba(153,153,153,.42);
+    background: url(//webmap1.bdimg.com/wolfman/static/common/images/new/shadow_6bf0ecd.png) no-repeat 0 0;
+    background-size: 86px 240px;
+    -webkit-transition-property: right,background-image;
+    transition-property: right,background-image;
+    -webkit-transition-duration: .4s;
+    transition-duration: .4s;
+}
+#mapType .earth {
+    background-position: 0 -181px;
+}
+#mapType .satellite, #mapType .earth {
+    right: 15px;
+    z-index: 2;
+    background-position: 0 -60px;
+}
+#mapType .mapTypeCard {
+    height: 60px;
+    width: 86px;
+    position: absolute;
+    border-radius: 2px;
+    top: 10px;
+    box-sizing: border-box;
+    border: 1px solid transparent;
+    border: 1px solid rgba(153,153,153,.42);
+    background: url(img/01.jpg) no-repeat 0 0;
+    background-size: 86px 240px;
+    -webkit-transition-property: right,background-image;
+    transition-property: right,background-image;
+    -webkit-transition-duration: .4s;
+    transition-duration: .4s;
+}
+#mapType .panorama {
+    z-index: 3;
+    right: 10px;
+    background-image: url(img/01.jpg);
+    background-position: 0 -121px;
+    border-left: 1px solid rgba(153,153,153,.6);
+}
+#mapType .mapTypeCard {
+    height: 60px;
+    width: 86px;
+    position: absolute;
+    border-radius: 2px;
+    top: 10px;
+    box-sizing: border-box;
+    border: 1px solid transparent;
+    border: 1px solid rgba(153,153,153,.42);
+    background: url(img/01.jpg) no-repeat 0 0;
+    background-size: 86px 240px;
+    -webkit-transition-property: right,background-image;
+    transition-property: right,background-image;
+    -webkit-transition-duration: .4s;
+    transition-duration: .4s;
+}
+#mapType .switch-box {
+    visibility: hidden;
+    position: absolute;
+    width: 100%;
+    height: 20px;
+    line-height: 22px;
+    color: #fff;
+    background: rgba(0,0,0,.5);
+}
+#mapType .mapTypeCard.active span, #mapType .mapTypeCard:hover span {
+    background-color: #3385FF;
+}
+#mapType .mapTypeCard span {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: inline-block;
+    padding: 3px 3px 2px 4px;
+    font-size: 12px;
+    height: 12px;
+    line-height: 12px;
+    color: #FFF;
+    border-top-left-radius: 2px;
+}
+</style>
+	<body>
+		<div class="container">
+			<div id="mapType-wrapper" class="expend">
+				<div id="mapType">
+					<div class="mapTypeCard normal active" data-name="normalMap">
+						<div class="switch-box"><input type="checkbox" class="switch">
+							<p>显示收藏点</p>
+						</div> <span>地图</span></div>
+					<div class="mapTypeCard earth" data-name="earth">
+						<div class="switch-box"><input type="checkbox" class="switch" checked="true">
+							<p>开启路网</p>
+						</div> <span>地球</span></div>
+					<div class="mapTypeCard panorama choosedType" data-name="panorama"> <span>全景</span></div>
+				</div>
+				<div id="renderModeSwitch">
+					<div id="render-mode-tips" class="black-tips" style="display: none;">
+						<div class=""> 已为您切换为普通地图模式 <span><a id="render-mode-switch-button">切换到3D地图模式</a></span> </div>
+						<div class="close-button"></div>
+					</div>
+					<div class="render-mode-tips-button" title="切换地图渲染方式"> </div>
+				</div>
+			</div>
+		</div>
+	</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
+<meta name="renderer" content="webkit">
+<title>css3</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<script type="text/javascript" src="js/jquery.min.js" ></script>
+<script type="text/javascript">
+jQuery(function () {
+    $('#menu-trigger').click(function () {
+        if (!$('.dLeft').hasClass('mobile-menu-left')) {
+            $('.head, .sild, .footer').addClass('mobile-left');
+            $('.dLeft').addClass('mobile-menu-left');
+        } else {
+            $('.dLeft').removeClass('mobile-menu-left');
+            $('.head, .sild, .footer').removeClass('mobile-left');
+        }
+    });
+});
+</script>
+<style type="text/css">
+body{color:#222;-webkit-text-size-adjust:none; overflow-x: hidden;margin:0; padding:0;}
+#menu-trigger { display:block; width:24px; height:21px; z-index:99999999; padding-top:20px; margin-left:20px;}
+.head { width:100%; height:112px; background:#e1e1e1; color:#fff;}
+.sild { width:100%; height:800px; background:#FF0;}
+.footer { width:100%; height:50px; background:#e1e1e1;}
+ 
+.head, .dLeft, .sild, .footer { position:relative; left:0; -webkit-transition:left 0.3s; -moz-transition:left 0.3s; transition:left 0.3s;}
+.dLeft { width:500px; height:962px; background:#000; position:fixed; left:-500px; top:0;}
+.mobile-left{left:500px;}
+.mobile-menu-left{left:0px;}
+</style>
+ 
+</head>
+ 
+<body>
+ 
+<div class="head"><a id="menu-trigger" href="javascript:void(0)"><img src="http://www.mqjj.com/templets/spy/images/menu.png"></a></div>
+
+<div class="dLeft"></div>
+
+</body>
+ 
+</html>

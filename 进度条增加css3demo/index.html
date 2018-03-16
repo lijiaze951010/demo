@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<script type="text/javascript" src="js/jquery.min.js" ></script>
+		<style>
+			.media-body1{
+				width:80px;
+				height:5px;
+				background-color: #091533;
+				border-radius: 3px;
+				
+			}
+			.alert-warning9{
+				height:100%;
+				border-radius: 3px;
+				background-color: #2395E8;
+				animation: myfirst 5s;
+-moz-animation: myfirst 5s;	/* Firefox */
+-webkit-animation: myfirst 5s;	/* Safari 和 Chrome */
+-o-animation: myfirst 5s;	
+			}
+			@keyframes myfirst
+{
+from {width: 0%;}
+to {width: 100%;}
+}
+
+@-moz-keyframes myfirst /* Firefox */
+{
+from {width: 0%;}
+to {width: 100%;}
+}
+
+@-webkit-keyframes myfirst /* Safari 和 Chrome */
+{
+from {width: 0%;}
+to {width: 100%;}
+}
+
+@-o-keyframes myfirst /* Opera */
+{
+from {width: 0%;}
+to {width: 100%;}
+}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="media-body1">
+				<div class="alert-warning9"></div>
+			</div>
+		</div>
+	</body>
+</html>

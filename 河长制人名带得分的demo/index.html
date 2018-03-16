@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<style>
+			ul{
+				padding:0;
+			}
+			.table3 li {
+				border-radius: 5px;
+				/* padding: 5px; */
+				color: #464444;
+				font-size: 12px;
+				/* border: 2px solid #234e7c; */
+				list-style: none;
+				margin: 0 10px;
+			}
+			
+			.hzzl_box_sbox1 {
+				font-size: 12px;
+				padding: 5px 5px 5px 5px;
+				border: 2px solid #234e7c;
+				border-radius: 3px;
+				margin: 0px auto 5px auto;
+				background-color: #223f67;
+				color: white;
+				background: none;
+			}
+			
+			.table3 li .rName,
+			.on-rv .rName {
+				font-size: 16px;
+			}
+			
+			.df {
+				text-align: center;
+				padding-left: 7px;
+				padding-top: 3px;
+				padding-bottom: 10px;
+				padding-right: 3px;
+				color: #464444;
+				display: inline-block;
+				border-radius: 5px;
+				float: right;
+				/* margin-top: 3px; */
+				FONT-SIZE: 20px;
+				font-style: normal;
+			}
+			
+			.toline {
+				padding-top: 5px;
+			}
+			
+			.table3 li .userlogo {
+				width: 40PX;
+				float: left;
+				padding-right: 5px;
+				border-radius: 50px;
+			}
+			
+			.table3 li .tellbox,
+			.on-rv .tellbox {
+				color: #464444;
+				font-size: 14px;
+				letter-spacing: 1px;
+				font-style: normal;
+			}
+			
+			.df4 {
+				background: #ff5543;
+			}
+			
+			.df1,
+			.df2,
+			.df3,
+			.df4 {
+				width: 35px;
+				height: 35px;
+				text-align: center;
+				line-height: 30px;
+			}
+			
+			
+			
+			
+			
+			
+			.accordion {
+    width: 100%;
+    /* max-width: 360px; */
+    /* margin: 30px auto 20px; */
+    /* background: #FFF; */
+    border: 2px solid #204c79;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+.accordion li {
+    padding: 0;
+    margin: 10px;
+}
+.accordion .link {
+    cursor: pointer;
+    display: block;
+    /* padding: 15px 15px 15px 42px; */
+    color: #464444;
+    font-size: 14px;
+    font-weight: 400;
+    border-bottom: 1px solid #CCC;
+    position: relative;
+    -webkit-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+.accordion li:last-child .link {
+    border-bottom: 0;
+}
+.accordion li i.fa-chevron-down {
+    right: 12px;
+    left: auto;
+    font-size: 14px;
+}
+		</style>
+	</head>
+
+	<body>
+		<div class="container">
+			<div style="width:400px" class="table3">
+				<ul>
+					<li class="hzzl_box_sbox1 top123 jp1" rel="sort6" style="cursor:pointer;" onclick="masterScore_Click('260A638E-C9C2-4B42-B5D7-1A09032BDDAE');"> <span pid="1" class="bluef rName" title="虹岭河">虹岭河</span>
+						<!--<sub>全长<span class="bluef">11.58</span>(km)<span></span></sub>--><i class="df df4">无</i>
+						<div class="toline"> <img src="/images/userlogo.png" class="userlogo"> <span><i class="tellbox">朱贵明</i><!--<img src="/images/tell.png" class="tell">--> </span> <br> <span class="tellnum">全长11.58(km)</span></div>
+					</li>
+					<li id="li260A638E-C9C2-4B42-B5D7-1A09032BDDAE" onclick="showNext('260A638E-C9C2-4B42-B5D7-1A09032BDDAE');" data-state="1">
+						<ul class="accordion">
+							<li>
+								<div class="link"> 得分详情<i class="fa fa-chevron-down on"></i> </div>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</body>
+
+</html>

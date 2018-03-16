@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - 我的 ASP.NET 应用程序</title>
+   <link rel="stylesheet" href="css/bootstrap.min.css" />
+   <link rel="stylesheet" href="css/left.css" />
+   <link rel="stylesheet" href="css/right.css" />
+   <link rel="stylesheet" href="css/top.css" />
+   <script type="text/javascript" src="js/jquery.min.js" ></script>
+ <style>
+     /*暂时的背景图片样式随后可删除*/
+     body {
+         background-image: url(img/background.png);
+         background-size: cover;
+     }
+ </style>
+</head>
+
+<body>
+    <div class="header">
+        <img class="logo"  src="img/HC.png" />
+        <span class="logotitle">承德市河长制智慧一体化管理平台</span>
+        <img style="position: absolute; margin: 9px 15px; right: 0; width: 46px;" src="img/admin.png" />
+        <div class=" hor-menu headerCity">
+            <div class="move">
+               
+                <div></div>
+            </div>
+            <ul class="nav navbar-nav">
+                <li id="lyqj" onclick="window.open('LYQJ.html', '_self')">
+                    流域全景
+                </li>
+                <li id="sxsfx" onclick="window.open('SXSFX.html', '_self')">
+                    水形式分析
+                </li>
+                <li id="hzxd" onclick="window.open('HZXD.html', '_self')" >
+                    河长行动
+                </li>
+                <li id="jxkh" onclick="window.open('JXKH.html', '_self')" class="mark">
+                    绩效考核
+                </li>
+                <li id="yqfx" onclick="window.open('YQFX.html', '_self')">
+                    舆情分析
+                </li>
+                <li id="zhjc" onclick="window.open('ZHJC.html', '_self')">
+                    综合决策
+                </li>
+            </ul>
+        </div>
+    </div>
+     <script type="text/javascript" src="js/top.js" ></script>
+    <div id="content" style="padding-top: 58px;">
+    		  <link rel="stylesheet" href="css/left.css" />
+   <style>
+   /*调整菜单状态的部分后期进行调整*/
+   	.move{
+   		left:310px;
+   	}
+   	 /*调整菜单状态的部分后期进行调整*/
+   </style>
+    <div class="left1" style="">
+        <ul>
+            <li>
+                <span>河长制考核<i class="fa fa-caret-down" aria-hidden="true"></i></span>
+                <ul>
+                    <li> <span class="active">市级</span></li>
+                    <li> <span>县（区）级</span></li>
+                      <li> <span>乡（镇）级</span></li>
+                      
+                      </ul>
+            </li>
+            <li>
+                <span>水资源考核<i class="fa fa-caret-down" aria-hidden="true"></i></span>
+               
+            </li>
+             <li>
+                <span>督查<i class="fa fa-caret-down" aria-hidden="true"></i></span>
+              
+            </li>
+          
+        </ul>
+    </div>
+   <script type="text/javascript" src="js/left.js" ></script>
+ 
+  </div>
+
+</body>
+</html>

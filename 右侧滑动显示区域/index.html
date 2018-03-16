@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<script type="text/javascript" src="js/jquery.min.js" ></script>
+	</head>
+	<style>
+		body{
+			background-image: url(img/01.jpg);
+		}
+		.rightPart{
+			position:fixed;
+			right:5px;
+			top:58px;
+			width:400px;
+			height:calc(100vh - 80px);
+			background-color: rgba(255, 255, 255, 0.92);
+			border-radius: 2px;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+			transition:right 1s;
+		}
+		.rightPart>.slideButton{
+			position: absolute;
+    top: 10px;
+    left: -15px;
+    width: 15px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.86);
+    border-top-left-radius: 40px;
+    border-bottom-left-radius: 40px;
+		}
+			.rightPart>.slideButton>img{
+		width: 18px;
+    position: absolute;
+    top: 10px;
+		}
+		.mobile-menu-left{right:-400px;}
+	</style>
+	<body>
+		<div class="rightPart">
+			<div id="slideButton" class="slideButton"><img src="img/br_next.png"/></div>
+		</div>
+	<script type="text/javascript">
+jQuery(function () {
+    $('.rightPart>.slideButton').click(function () {
+        if (!$('.rightPart').hasClass('mobile-menu-left')) {
+                     $('.rightPart').addClass('mobile-menu-left');
+                     $(".rightPart>.slideButton>img").attr('src',"img/br_prev.png");
+        } else {
+            $('.rightPart').removeClass('mobile-menu-left');  $('.head, .sild, .footer').removeClass('mobile-left');
+             $(".rightPart>.slideButton>img").attr('src',"img/br_next.png");
+        }
+    });
+});
+</script>
+	</body>
+</html>

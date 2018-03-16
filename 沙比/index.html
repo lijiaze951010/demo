@@ -1,74 +1,467 @@
 <!DOCTYPE html>
 <html>
+
 	<head>
 		<meta charset="utf-8" />
 		<title></title>
 		<link rel="stylesheet" href="css/bootstrap.min.css" />
-		<script type="text/javascript" src="js/jquery.min.js" ></script>
-		<script type="text/javascript" src="js/bootstrap-table.js" ></script>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap-table.js"></script>
 		<link rel="stylesheet" href="css/bootstrap-table.css" />
+		<style>
+			.cityTable .fixed-table-header>table {
+				background: #fff;
+				border-radius: 5px 5px 0px 0px;
+				border-bottom: 2px solid #e3e5f1;
+				box-shadow: 0px 3px 3px rgba(53, 53, 53, 0.08);
+				position: relative;
+				z-index: 1;
+				font-size: 12px;
+				height: 45px;
+				width: 100%;
+			}
+			
+			.cityTable .fixed-table-container thead th {
+				border: none;
+			}
+			
+			.cityTable .fixed-table-container tbody td {
+				border-left: 0px solid #dddddd;
+			}
+			
+			.cityTable .fixed-table-container {
+				border: 0px solid #dddddd;
+				border-radius: 0px;
+			}
+			
+			.cityTable .table {
+				background-color: #fff !important;
+			}
+			
+			.cityTable .table thead tr th {
+				font-size: 13px;
+				font-weight: 600;
+				text-align: center;
+			}
+			
+			.cityTable .table>tbody>tr>td {
+				border-top: 1px solid #efefef;
+				padding: 10px ! important;
+				text-align: center;
+			}
+			
+			.cityTable .fixed-table-header {
+				margin-right: 0 !important;
+				box-shadow: 0px 3px 3px rgba(53, 53, 53, 0.08);
+				position: relative;
+				z-index: 11;
+			}
+			
+			.cityTable .fixed-table-body {
+				position: relative;
+				z-index: 10;
+			}
+			
+			.cityTable .bootstrap-table .table>thead>tr>th {
+				vertical-align: bottom;
+				border-bottom: 0px solid #ddd;
+			}
+			/*scroll*/
+			
+			#tableCage::-webkit-scrollbar-track {
+				/*-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);*/
+				background-color: #d2d2d2;
+				border-radius: 10px;
+			}
+			
+			#tableCage::-webkit-scrollbar {
+				width: 5px;
+				height: 8px;
+				background-color: #d2d2d2;
+			}
+			
+			#tableCage::-webkit-scrollbar-thumb {
+				border-radius: 10px;
+				background-color: #a0a0a0;
+			}
+		</style>
 	</head>
+
 	<body>
-		<div class="container">
+		<div class="cityTable">
 			<table id="tb_departments"></table>
 		</div>
-		 <script type="text/javascript">
-        $(function () {
-            //1.初始化Table
-            var oTable = new TableInit();
-            oTable.Init();
-        });
+		<script type="text/javascript">
+			$(function() {
+				//1.初始化Table
+				var oTable = new TableInit();
+				oTable.Init();
+			});
 
-        var TableInit = function () {
-            var oTableInit = new Object();
-            //初始化Table
-            oTableInit.Init = function () {
-                $('#tb_departments').bootstrapTable({
-                    url: 'img/data6.json',         //请求后台的URL（*）
-                    method: 'get',                      //请求方式（*）
-                    striped: true,                      //是否显示行间隔色
-                    sortable: false,                     //是否启用排序
-                    sortOrder: "asc",                   //排序方式
-                    pagination: true,//是否显示分页（*）  
-                    queryParams: oTableInit.queryParams,//传递参数（*）
-                    pageNumber: 1,                       //初始化加载第一页，默认第一页
-                    pageSize: 20,                       //每页的记录行数（*）
-                    pageList: [10, 25, 50, 100],        //可供选择的每页的行数（*）
-                    minimumCountColumns: 2,             //最少允许的列数
-                    clickToSelect: true,                //是否启用点击选中行
-                    height: 500,                        //行高，如果没有设置height属性，表格自动根据记录条数觉得表格高度
-                    columns: [{
-                        checkbox: true
-                    }, {
-                        field: 'color',
-                        title: 'shabi'
-                    }, {
-                        field: 'shape',
-                        title: '大哥'
-                    }, {
-                        field: 'area',
-                        title: 'column_3'
-                    }, {
-                        field: 'label',
-                        title: 'column_4'
-                    }, ]
-                });
-            };
+			var TableInit = function() {
+				var oTableInit = new Object();
+				//初始化Table
+				oTableInit.Init = function() {
+					$('#tb_departments').bootstrapTable({
+						url: 'img/data6.json', //请求后台的URL（*）
+						method: 'get', //请求方式（*）
+						striped: true, //是否显示行间隔色
+						sortable: false, //是否启用排序
+						sortOrder: "asc", //排序方式
+						pagination: true, //是否显示分页（*）  
+						queryParams: oTableInit.queryParams, //传递参数（*）
+						pageNumber: 1, //初始化加载第一页，默认第一页
+						pageSize: 20, //每页的记录行数（*）
+						pageList: [10, 25, 50, 100], //可供选择的每页的行数（*）
+						minimumCountColumns: 2, //最少允许的列数
+						clickToSelect: true, //是否启用点击选中行
+						height: 500, //行高，如果没有设置height属性，表格自动根据记录条数觉得表格高度
+						columns: [{
+							field: 'color',
+							title: 'shabi'
+						}, {
+							field: 'shape',
+							title: '大哥'
+						}, {
+							field: 'area',
+							title: 'column_3'
+						}, {
+							field: 'label',
+							title: 'column_4'
+						}, ]
+					});
+				};
 
+				//得到查询的参数
+				oTableInit.queryParams = function(params) {
+					var temp = { //这里的键的名字和控制器的变量名必须一直，这边改动，控制器也需要改成一样的
+						limit: params.limit, //页面大小
+						offset: params.offset, //页码
+						departmentname: $("#txt_search_departmentname").val(),
+						statu: $("#txt_search_statu").val()
+					};
+					return temp;
+				};
+				return oTableInit;
+			};
+		</script>
+		<style>
 
-            //得到查询的参数
-            oTableInit.queryParams = function (params) {
-                var temp = {   //这里的键的名字和控制器的变量名必须一直，这边改动，控制器也需要改成一样的
-                    limit: params.limit,   //页面大小
-                    offset: params.offset,  //页码
-                    departmentname: $("#txt_search_departmentname").val(),
-                    statu: $("#txt_search_statu").val()
-                };
-                return temp;
-            };
-            return oTableInit;
-        };
-
-    </script>
+.div_cardList .mapGridPanel {
+    overflow-y: auto;
+}
+.cardList_content .row {
+    margin-left: 10px;
+    margin-right: 0;
+}
+.cardList_content .cardList_content_item {
+    /* border-radius: 7px; */
+    /* background: #2e5a91; */
+    /* background: rgba(46, 90, 145, 0.55); */
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding-bottom: 3px;
+    line-height: 22px;
+}
+.cardList_content_item div[class^="col-md-"] {
+    padding-left: 0;
+    padding-right: 0;
+    display: inline-block;
+    float: left;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+.cardList_content .cardList_content_item_title {
+    margin: 0;
+    background: #235096;
+    border-radius: 15px;
+    margin-bottom: 5px;
+    width: 100%;
+    padding-right: 10px !important;
+}
+.cardList_content .cardList_content_item .cardList_content_item_neirong {
+    width: 100%;
+    padding-right: 10px;
+    padding-top: 5px;
+}
+.cardList_content_item div[class^="col-md-"] {
+    padding-left: 0;
+    padding-right: 0;
+    display: inline-block;
+    float: left;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+.cardList_content .row {
+    margin-left: 10px;
+    margin-right: 0;
+}
+.cardList_content_item div[class^="the_item_"] {
+    padding-left: 0;
+    padding-right: 0;
+    display: inline-block;
+    float: left;
+}
+.the_item_hezhang {
+    width: 110px;
+}
+.cardList_content_item div[class^="the_item_"].the_item_zhuangtai {
+    float: right;
+    padding-right: 3px;
+}
+.cardList_content_item div[class^="the_item_"] {
+    padding-left: 0;
+    padding-right: 0;
+    display: inline-block;
+    float: left;
+}
+.the_item_zhuangtai {
+    width: 80px;
+    text-align: right;
+}
+.cardList_content_item div[class^="the_item_"].the_item_heduan {
+    float: right;
+    width: 150px;
+}
+.the_item_heduan {
+    text-align: right;
+}
+.the_item_hezhang label {
+    color: #c8d4e0;
+}
+.the_item_hezhang span {
+}
+.cardList_content span {
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    vertical-align: middle;
+}
+.zhuangtai_color1 {
+    color: #faff00;
+}
+.the_item_heduan span {
+    width: 150px;
+    font-size: 15px;
+    vertical-align: top;
+}
+.row_image_and_content_Left {
+    display: inline-block;
+    float: left;
+    width: 110px;
+}
+.cardList_showImg {
+    display: inline-block;
+    float: left;
+    margin-bottom: 15px;
+}
+.cardList_showImg img {
+    width: 110px;
+    height: 74px;
+    margin-top: 6px;
+}
+.row_image_and_content_Right {
+    display: inline-block;
+    float: right;
+}
+.cardList_content_item div[class^="the_item_"].the_item_xq {
+    float: right;
+}
+.cardList_content_item .the_item_xq a {
+    color: #ffffff;
+    padding: 1px 10px;
+    border-radius: 5px;
+    border: 1px solid #fff;
+    font-size: 12px;
+}
+.the_item_miaoshu {
+    margin-bottom: 5px;
+}
+.cardList_content label {
+    margin-bottom: 0;
+    font-weight: 400;
+    vertical-align: middle;
+}
+.cardList_content span {
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    vertical-align: middle;
+}
+.the_item_time span {
+    color: #7691AA;
+}
+		</style>
+		<div class="gridPanel mapGridPanel" id="divTableContainer" style="height: 435px;">
+			<div class="cardList_content" id="cardList_content">
+				<div class="row cardList_content_item" onclick="troubles_Location(293);">
+					<div class="col-md-12 cardList_content_item_title">
+						<div class="row">
+							<div class="the_item_hezhang"> <label>河长:</label> <span>吴海潮</span> </div>
+							<div class="the_item_zhuangtai"> <span class="zhuangtai_color1">待处理</span> </div>
+							<div class="the_item_heduan"> <span title="沙坪河-汇源段">沙坪河-汇源段</span> </div>
+						</div>
+					</div>
+					<div class="col-md-12  cardList_content_item_neirong">
+						<div class="row row_image_and_content">
+							<div class="row_image_and_content_Left the_item_img">
+								<div class="cardList_showImg"> <img src="http://wws.bewg.net.cn/Images/nonePic.png"> </div>
+							</div>
+							<div class="row_image_and_content_Right">
+								<div class="row">
+									<div class="the_item_type"> <img src="/Images/zhjc/违建.png"> <span>违建</span> </div>
+									<div class="the_item_xq">
+										<a onclick="showDetail('4da002aa-37e5-4277-98bf-35269df8440e');" style="cursor:pointer;">详情</a>
+									</div>
+								</div>
+								<div class="row">
+									<div class="the_item_miaoshu"> <label>问题描述:</label> <span title="问题补充属性">问题补充属性</span> </div>
+								</div>
+								<div class="row">
+									<div class="the_item_laiyuan"> <label>来源:</label> <span>巡查</span> </div>
+									<div class="the_item_time"> <span>2018-01-30 11:27:37</span> </div>
+								</div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+					</div>
+				</div>
+				<div class="row cardList_content_item" onclick="troubles_Location(294);">
+					<div class="col-md-12 cardList_content_item_title">
+						<div class="row">
+							<div class="the_item_hezhang"> <label>河长:</label> <span>吴海潮</span> </div>
+							<div class="the_item_zhuangtai"> <span class="zhuangtai_color1">待处理</span> </div>
+							<div class="the_item_heduan"> <span title="沙坪河-汇源段">沙坪河-汇源段</span> </div>
+						</div>
+					</div>
+					<div class="col-md-12  cardList_content_item_neirong">
+						<div class="row row_image_and_content">
+							<div class="row_image_and_content_Left the_item_img">
+								<div class="cardList_showImg"> <img src="http://wws.bewg.net.cn/Images/nonePic.png"> </div>
+							</div>
+							<div class="row_image_and_content_Right">
+								<div class="row">
+									<div class="the_item_type"> <img src="/Images/zhjc/养殖.png"> <span>养殖</span> </div>
+									<div class="the_item_xq">
+										<a onclick="showDetail('94a31a59-ad6b-41fe-ad71-aad549ff68f1');" style="cursor:pointer;">详情</a>
+									</div>
+								</div>
+								<div class="row">
+									<div class="the_item_miaoshu"> <label>问题描述:</label> <span title="问题补充属性">问题补充属性</span> </div>
+								</div>
+								<div class="row">
+									<div class="the_item_laiyuan"> <label>来源:</label> <span>巡查</span> </div>
+									<div class="the_item_time"> <span>2018-01-30 11:27:37</span> </div>
+								</div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+					</div>
+				</div>
+				<div class="row cardList_content_item" onclick="troubles_Location(290);">
+					<div class="col-md-12 cardList_content_item_title">
+						<div class="row">
+							<div class="the_item_hezhang"> <label>河长:</label> <span>吴海潮</span> </div>
+							<div class="the_item_zhuangtai"> <span class="zhuangtai_color1">待处理</span> </div>
+							<div class="the_item_heduan"> <span title="沙坪河-汇源段">沙坪河-汇源段</span> </div>
+						</div>
+					</div>
+					<div class="col-md-12  cardList_content_item_neirong">
+						<div class="row row_image_and_content">
+							<div class="row_image_and_content_Left the_item_img">
+								<div class="cardList_showImg"> <img src="http://wws.bewg.net.cn/Images/nonePic.png"> </div>
+							</div>
+							<div class="row_image_and_content_Right">
+								<div class="row">
+									<div class="the_item_type"> <img src="/Images/zhjc/垃圾.png"> <span>垃圾</span> </div>
+									<div class="the_item_xq">
+										<a onclick="showDetail('865a1f5f-a073-40e4-8aba-bf6bd1ff30b0');" style="cursor:pointer;">详情</a>
+									</div>
+								</div>
+								<div class="row">
+									<div class="the_item_miaoshu"> <label>问题描述:</label> <span title="可以">可以</span> </div>
+								</div>
+								<div class="row">
+									<div class="the_item_laiyuan"> <label>来源:</label> <span>巡查</span> </div>
+									<div class="the_item_time"> <span>2018-01-30 10:58:22</span> </div>
+								</div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+					</div>
+				</div>
+				<div class="row cardList_content_item" onclick="troubles_Location(291);">
+					<div class="col-md-12 cardList_content_item_title">
+						<div class="row">
+							<div class="the_item_hezhang"> <label>河长:</label> <span>吴海潮</span> </div>
+							<div class="the_item_zhuangtai"> <span class="zhuangtai_color1">待处理</span> </div>
+							<div class="the_item_heduan"> <span title="沙坪河-汇源段">沙坪河-汇源段</span> </div>
+						</div>
+					</div>
+					<div class="col-md-12  cardList_content_item_neirong">
+						<div class="row row_image_and_content">
+							<div class="row_image_and_content_Left the_item_img">
+								<div class="cardList_showImg"> <img src="http://wws.bewg.net.cn/Images/nonePic.png"> </div>
+							</div>
+							<div class="row_image_and_content_Right">
+								<div class="row">
+									<div class="the_item_type"> <img src="/Images/zhjc/捕鱼.png"> <span>捕鱼</span> </div>
+									<div class="the_item_xq">
+										<a onclick="showDetail('88e80093-577b-4de6-9538-2fd837ba638d');" style="cursor:pointer;">详情</a>
+									</div>
+								</div>
+								<div class="row">
+									<div class="the_item_miaoshu"> <label>问题描述:</label> <span title="可以">可以</span> </div>
+								</div>
+								<div class="row">
+									<div class="the_item_laiyuan"> <label>来源:</label> <span>巡查</span> </div>
+									<div class="the_item_time"> <span>2018-01-30 10:58:22</span> </div>
+								</div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+					</div>
+				</div>
+				<div class="row cardList_content_item" onclick="troubles_Location(271);">
+					<div class="col-md-12 cardList_content_item_title">
+						<div class="row">
+							<div class="the_item_hezhang"> <label>河长:</label> <span>吴海潮</span> </div>
+							<div class="the_item_zhuangtai"> <span class="zhuangtai_color1">待处理</span> </div>
+							<div class="the_item_heduan"> <span title="沙坪河-汇源段">沙坪河-汇源段</span> </div>
+						</div>
+					</div>
+					<div class="col-md-12  cardList_content_item_neirong">
+						<div class="row row_image_and_content">
+							<div class="row_image_and_content_Left the_item_img">
+								<div class="cardList_showImg"> <img src="http://wws.bewg.net.cn/Attachment/20180116/81d8ec42-6599-4c7c-b3a5-972454a0da35_20180116075511.png"> </div>
+							</div>
+							<div class="row_image_and_content_Right">
+								<div class="row">
+									<div class="the_item_type"> <img src="/Images/zhjc/其他.png"> <span>其他</span> </div>
+									<div class="the_item_xq">
+										<a onclick="showDetail('ee7204fd-91e1-4515-bd1a-f014ccfaeff9');" style="cursor:pointer;">详情</a>
+									</div>
+								</div>
+								<div class="row">
+									<div class="the_item_miaoshu"> <label>问题描述:</label> <span title="河长牌损坏">河长牌损坏</span> </div>
+								</div>
+								<div class="row">
+									<div class="the_item_laiyuan"> <label>来源:</label> <span>巡查</span> </div>
+									<div class="the_item_time"> <span>2018-01-16 07:55:56</span> </div>
+								</div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+					</div>
+				</div>
+				<!--begin 卡片式列表-->
+				<!--<div class="cardList_content" style="display:none;">           <div class="row cardList_content_item">                                    <div class="col-md-12">                                        <div class="row row_image_and_content">                                            <div class="cardList_showImg">                                                <img src="/Images/text2.jpg" />                                            </div>                                            <div class="col-md-8">                                                <div class="row">                                                    <div class="col-md-6">                                                        <label>来源:</label>                                                        <span>微信</span>                                                    </div>                                                    <div class="col-md-6">                                                        <label>类型:</label>                                                        <span>排口问题</span>                                                    </div>                                                </div>                                                                                       </div>                                                                                   <div class="col-md-8">                                                <div class="row">                                                    <div class="col-md-6">                                                        <label>状态:</label>                                                        <span>待处理</span>                                                    </div>                                                    <div class="col-md-6">                                                        <label>河长:</label>                                                        <span>吴耀明</span>                                                    </div>                                                </div>                                            </div>                                            <div class="col-md-8">                                                <label>所属河段:</label>                                                <span>西江干流水道鹤山段西江干流水道鹤山段</span>                                            </div>                                            <div class="col-md-8">                                                <label>上报时间:</label>                                                <span>0000-00-00 00:00:00</span>                                            </div>                                            <div class="clearfix"></div>                                        </div>                                    </div>                                    <div class="col-md-12">                                        <div class="row">                                                                                <div class="col-md-10">                                                <label>问题描述:</label>                                                <span>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</span>                                            </div>                                            <div class="col-md-2 text-right a_xq">                                                <a>详情</a>                                            </div>                                        </div>                                    </div>                                </div></div>-->
+				<!--end 卡片式列表-->
+			</div>
+		</div>
 	</body>
+
 </html>

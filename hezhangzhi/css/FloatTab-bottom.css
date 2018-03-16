@@ -1,0 +1,61 @@
+
+   
+   .FloatTab-bottom{
+   	  position: fixed;
+    left: 33%;
+    bottom: -3px;
+   }
+   
+    .FloatTab-bottom .bottomPage{
+  
+   height: 3em;
+    background-color: rgba(255, 255, 255, 0.86);
+    border-radius: 6px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+   
+   }
+  .bottomPage .bottomTab >li{
+  	float:left;
+  	
+  }
+  .bottomTab{
+  	padding:0px;
+  }
+  .bottomPage .bottomTab >li>span{
+      padding: 10px 20px;
+    font-size: 13px;
+        color: #5c5c5c;
+    font-weight: 700;
+    cursor: pointer;
+  }
+   .bottomPage .bottomTab >li{
+   	height: 38px;
+    padding-top: 0.7em;
+   position:relative;
+  }
+   .bottomPage .bottomTabUp{
+
+    position: absolute;
+    bottom: 38px;
+    left: -35px;
+    padding: 0;
+    width: 13em;
+    font-size: 12px;
+    display: none;
+    background-color: #fff;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.86);
+    border-radius: 2px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+   }
+     .bottomPage .bottomTabUp input[type=checkbox]{
+     	vertical-align: -2px;
+     	margin-right: 3px;;
+     }
+     .bottomTab>li+li {
+    
+   border-left: 1px solid rgba(228, 204, 204, 0.3);
+}
+.bottomPage .bottomTabUp>li{
+	cursor: pointer;
+}

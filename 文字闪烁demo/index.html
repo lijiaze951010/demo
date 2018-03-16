@@ -1,0 +1,42 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <title></title>  
+    <style>  
+        .box{ animation: change 1s  ease-in  infinite ; font-size: 36px; color:#f00; font-weight: bold}  
+      
+    </style>  
+</head>  
+<body>  
+<a class="box">太阳的后裔</a>  
+<style>
+    @-webkit-keyframes shake{
+        0%{
+            opacity: 1;
+        }
+        50%{
+            opacity: 0.2;
+        }
+        100%{
+            opacity: 1;
+        }
+    }@keyframes shake{
+        0%{
+            opacity: 1;
+        }
+        50%{
+            opacity: 0.2;
+        }
+        100%{
+            opacity: 1;
+        }
+    }
+    .shake{
+        -webkit-animation: shake 2s infinite;
+        animation: shake 2s infinite;
+    }
+</style>
+<h1 class="shake">hello world</h1>
+</body>  
+</html> 
